@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -482,7 +483,7 @@ class StarFieldPainter extends CustomPainter {
     for (var star in stars) {
       paint.strokeWidth = star.size;
       paint.color = Colors.white.withOpacity(0.5 + (star.speed * 100).clamp(0.0, 0.5));
-      canvas.drawPoints(PointMode.points, [Offset(star.x * size.width, star.y * size.height)], paint);
+      canvas.drawPoints(ui.PointMode.points, [Offset(star.x * size.width, star.y * size.height)], paint);
     }
   }
 
